@@ -15,6 +15,7 @@ source.dir = .
 # (list) الامتدادات المضمنة
 source.include_exts = py,png,jpg,kv,atlas,json,ttf
 
+version = 0.1
 # (list) التبعات المطلوبة للتطبيق
 # تنبيه: لا تضع cython هنا إطلاقاً، سيتم التعامل معها من النظام
 requirements = python3,kivy==2.3.0
