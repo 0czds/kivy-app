@@ -1,59 +1,42 @@
 [app]
 
-# (str) عنوان التطبيق
+# (str) Title of your application
 title = My Kivy App
 
-# (str) اسم الحزمة (أحرف صغيرة فقط وبدون مساحات)
-package.name = mykivyapp
+# (str) Package name
+package.name = myapp
 
-# (str) النطاق
-package.domain = com.mycompany
+# (str) Package domain (needed for android/ios packaging)
+package.domain = org.test
 
-# (str) المجلد الذي يحتوي على main.py
+# (str) Source code where the main.py live
 source.dir = .
 
-# (list) الامتدادات المضمنة
-source.include_exts = py,png,jpg,kv,atlas,json,ttf
+# (list) Source files to include (let empty to include all the files)
+source.include_exts = py,png,jpg,kv,atlas
 
+# (str) Application versioning (هذا يحل خطأ رقم الإصدار)
 version = 0.1
-# (list) التبعات المطلوبة للتطبيق
-# تنبيه: لا تضع cython هنا إطلاقاً، سيتم التعامل معها من النظام
+
+# (list) Application requirements
 requirements = python3,kivy==2.3.0
 
-# (str) اتجاه الشاشة (portrait, landscape)
+# (str) Supported orientation (landscape, portrait or all)
 orientation = portrait
 
-# (bool) ملء الشاشة أم لا
+# (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
 
-# (list) الأذونات المطلوبة (مثال: INTERNET)
-# android.permissions = INTERNET
+# (list) The Android archs to build for
+android.archs = arm64-v8a, armeabi-v7a
 
-# (int) Target Android API (33 أو 34)
-android.api = 34
-
-# (int) أدنى إصدار أندرويد يدعمه التطبيق
-android.minapi = 24
-
-# (str) إصدار Android NDK
-android.ndk = 25b
-
-# (bool) القبول التلقائي لترخيص SDK
+# (bool) Allow C++ standard library
 android.accept_sdk_license = True
-
-# (str) المعمارية الموجهة (اختيار arm64-v8a يضمن السرعة وعدم التعارض)
-android.archs = arm64-v8a
-
-# (bool) تفعيل دعم AndroidX (ضروري جداً للإصدارات الحديثة)
-android.enable_androidx = True
-
-# (str) فرع python-for-android
-p4a.branch = master
 
 [buildozer]
 
-# (int) مستوى التوثيق (2 تعني طباعة كل التفاصيل للتصحيح)
+# (int) Log level (2 = debug, very useful for troubleshooting)
 log_level = 2
 
-# (int) إظهار تحذير إذا تم التشغيل كـ root
+# (int) Display warning if buildozer is run as root (0 = False, 1 = True)
 warn_on_root = 1
